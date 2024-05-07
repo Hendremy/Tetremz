@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://di5upcmm34hiy"]
+
+[ext_resource type="Texture2D" uid="uid://d256rcjvfgi4r" path="res://assets/bloc_sheet.png" id="1_wr5tq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bact0"]
+size = Vector2(128, 128)
+
+[node name="CubeTetromino" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_bact0")
+
+[node name="Unit" type="Sprite2D" parent="."]
+texture = ExtResource("1_wr5tq")
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="Unit2" type="Sprite2D" parent="."]
+position = Vector2(64, 0)
+texture = ExtResource("1_wr5tq")
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="Unit3" type="Sprite2D" parent="."]
+position = Vector2(0, 64)
+texture = ExtResource("1_wr5tq")
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="Unit4" type="Sprite2D" parent="."]
+position = Vector2(64, 64)
+texture = ExtResource("1_wr5tq")
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)
