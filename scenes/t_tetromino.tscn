@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu1ae4jk0y2u4"]
+
+[ext_resource type="PackedScene" uid="uid://boo0ekorlyejc" path="res://scenes/base_tetromino.tscn" id="1_iovec"]
+[ext_resource type="Texture2D" uid="uid://d256rcjvfgi4r" path="res://assets/bloc_sheet.png" id="2_581ys"]
+
+[node name="TTetromino" instance=ExtResource("1_iovec")]
+
+[node name="Collision" type="CollisionPolygon2D" parent="." index="0"]
+position = Vector2(96, 32)
+polygon = PackedVector2Array(-96, -32, 96, -32, 96, 32, 32, 32, 32, 96, -32, 96, -32, 32, -96, 32)
+
+[node name="Unit2" type="Sprite2D" parent="." index="1"]
+position = Vector2(96, 32)
+texture = ExtResource("2_581ys")
+offset = Vector2(64, 0)
+region_enabled = true
+region_rect = Rect2(0, 64, 64, 64)
+
+[node name="Unit3" type="Sprite2D" parent="." index="2"]
+position = Vector2(96, 32)
+texture = ExtResource("2_581ys")
+offset = Vector2(-64, 0)
+region_enabled = true
+region_rect = Rect2(0, 64, 64, 64)
+
+[node name="Unit4" type="Sprite2D" parent="." index="3"]
+position = Vector2(96, 32)
+texture = ExtResource("2_581ys")
+offset = Vector2(0, 64)
+region_enabled = true
+region_rect = Rect2(0, 64, 64, 64)
+
+[node name="Unit" type="Sprite2D" parent="." index="4"]
+position = Vector2(96, 32)
+texture = ExtResource("2_581ys")
+region_enabled = true
+region_rect = Rect2(0, 64, 64, 64)

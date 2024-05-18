@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://boo0ekorlyejc"]
+
+[ext_resource type="Script" path="res://scripts/Tetromino.gd" id="1_0pxhq"]
+
+[node name="BaseTetromino" type="AnimatableBody2D"]
+sync_to_physics = false
+script = ExtResource("1_0pxhq")

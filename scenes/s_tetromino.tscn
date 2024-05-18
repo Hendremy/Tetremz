@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv7yx2t0j3c3v"]
+
+[ext_resource type="Script" path="res://scripts/Tetromino.gd" id="1_7vsno"]
+[ext_resource type="Texture2D" uid="uid://d256rcjvfgi4r" path="res://assets/bloc_sheet.png" id="2_y4lvf"]
+
+[node name="STetromino" type="AnimatableBody2D"]
+sync_to_physics = false
+script = ExtResource("1_7vsno")
+
+[node name="Unit1" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+texture = ExtResource("2_y4lvf")
+offset = Vector2(0, 64)
+region_enabled = true
+region_rect = Rect2(256, 0, 64, 64)
+
+[node name="Unit2" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+texture = ExtResource("2_y4lvf")
+offset = Vector2(64, 64)
+region_enabled = true
+region_rect = Rect2(256, 0, 64, 64)
+
+[node name="Unit3" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+texture = ExtResource("2_y4lvf")
+offset = Vector2(64, 0)
+region_enabled = true
+region_rect = Rect2(256, 0, 64, 64)
+
+[node name="Unit4" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+texture = ExtResource("2_y4lvf")
+offset = Vector2(128, 0)
+region_enabled = true
+region_rect = Rect2(256, 0, 64, 64)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(64, 64)
+polygon = PackedVector2Array(0, 0, 0, -64, 128, -64, 128, 0, 64, 0, 64, 64, -64, 64, -64, 0)
