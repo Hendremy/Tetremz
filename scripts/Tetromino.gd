@@ -6,6 +6,9 @@ signal bottom_hit
 var can_move = false
 
 func _ready():
+	can_move = false
+	
+func activate():
 	can_move = true
 
 func _process(_delta):

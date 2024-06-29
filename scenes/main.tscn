@@ -85,9 +85,9 @@ z_index = -1
 anchors_preset = -1
 anchor_bottom = 0.247
 offset_left = 48.0
-offset_top = -16.0
+offset_top = -80.0
 offset_right = 102.0
-offset_bottom = 120.944
+offset_bottom = 71.944
 scale = Vector2(12.3603, 4.39686)
 theme = SubResource("Theme_dq2qw")
 theme_override_styles/panel = ExtResource("4_i7i7t")
@@ -133,10 +133,10 @@ label_settings = SubResource("LabelSettings_vlt5f")
 [node name="ScoreContainer" type="PanelContainer" parent="UI/Score"]
 anchors_preset = -1
 anchor_bottom = 0.247
-offset_left = 836.0
-offset_top = 541.0
-offset_right = 908.0
-offset_bottom = 411.944
+offset_left = 832.0
+offset_top = 560.0
+offset_right = 904.0
+offset_bottom = 425.944
 scale = Vector2(12.3603, 4.39686)
 theme = SubResource("Theme_dq2qw")
 theme_override_styles/panel = ExtResource("4_i7i7t")
@@ -175,16 +175,31 @@ theme_override_styles/panel = ExtResource("4_i7i7t")
 
 [node name="Hold" type="Node" parent="UI"]
 
+[node name="HoldControl" type="Control" parent="UI/Hold"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -680.0
+offset_top = 208.0
+offset_right = -646.0
+offset_bottom = 257.0
+scale = Vector2(1.15353, 0.984563)
+
 [node name="HoldContainer" type="PanelContainer" parent="UI/Hold"]
 unique_name_in_owner = true
 z_index = -1
 anchors_preset = -1
-anchor_bottom = 0.247
-offset_left = -832.0
-offset_top = 96.0
-offset_right = -796.0
-offset_bottom = -13.056
+anchor_left = -0.667
+anchor_top = 0.235
+anchor_right = -0.5
+anchor_bottom = 0.407
+offset_left = -79.616
+offset_top = -56.28
+offset_right = -232.0
+offset_bottom = -116.736
 scale = Vector2(8.7603, 4.39686)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = SubResource("Theme_dq2qw")
 theme_override_styles/panel = ExtResource("4_i7i7t")
 
@@ -204,17 +219,64 @@ offset_bottom = 69.0
 text = "Next :"
 label_settings = SubResource("LabelSettings_xjrjb")
 
-[node name="NextContainer" type="PanelContainer" parent="UI/Next"]
+[node name="NextStyleBox" type="PanelContainer" parent="UI/Next"]
 z_index = -1
+layout_direction = 2
 anchors_preset = -1
-anchor_bottom = 0.247
-offset_left = 836.0
-offset_top = 96.0
-offset_right = 908.0
-offset_bottom = -6.056
+anchor_left = 0.785
+anchor_top = 0.21
+anchor_right = 1.424
+anchor_bottom = 0.432
+offset_left = -64.32
+offset_top = -40.08
+offset_right = -729.448
+offset_bottom = -130.936
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(12.3603, 4.39686)
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme = SubResource("Theme_dq2qw")
 theme_override_styles/panel = ExtResource("4_i7i7t")
+metadata/_edit_use_anchors_ = true
+
+[node name="NextContainer" type="HBoxContainer" parent="UI/Next"]
+unique_name_in_owner = true
+layout_direction = 2
+anchors_preset = -1
+anchor_left = 0.777778
+anchor_top = 0.197531
+anchor_right = 1.44444
+anchor_bottom = 0.45679
+scale = Vector2(1, 0.988366)
+metadata/_edit_use_anchors_ = true
+
+[node name="Next0" type="Control" parent="UI/Next"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1000.0
+offset_top = 192.0
+offset_right = 1040.0
+offset_bottom = 232.0
+
+[node name="Next1" type="Control" parent="UI/Next"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1256.0
+offset_top = 192.0
+offset_right = 1296.0
+offset_bottom = 232.0
+
+[node name="Next2" type="Control" parent="UI/Next"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1512.0
+offset_top = 192.0
+offset_right = 1552.0
+offset_bottom = 232.0
 
 [node name="TileMap" type="TileMap" parent="."]
 visible = false
