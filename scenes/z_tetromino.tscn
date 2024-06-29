@@ -6,31 +6,33 @@
 [node name="ZTetromino" instance=ExtResource("1_f64yg")]
 
 [node name="Unit" type="Sprite2D" parent="." index="0"]
-position = Vector2(32, 32)
+position = Vector2(-32, -32)
 texture = ExtResource("2_sj3vn")
 region_enabled = true
 region_rect = Rect2(448, 0, 64, 64)
 
 [node name="Unit2" type="Sprite2D" parent="." index="1"]
-position = Vector2(32, 32)
+position = Vector2(-32, -32)
 texture = ExtResource("2_sj3vn")
 offset = Vector2(64, 0)
 region_enabled = true
 region_rect = Rect2(448, 0, 64, 64)
 
 [node name="Unit3" type="Sprite2D" parent="." index="2"]
-position = Vector2(32, 32)
+position = Vector2(-32, -32)
 texture = ExtResource("2_sj3vn")
 offset = Vector2(64, 64)
 region_enabled = true
 region_rect = Rect2(448, 0, 64, 64)
 
 [node name="Unit4" type="Sprite2D" parent="." index="3"]
-position = Vector2(32, 32)
+position = Vector2(-32, -32)
 texture = ExtResource("2_sj3vn")
 offset = Vector2(128, 64)
 region_enabled = true
 region_rect = Rect2(448, 0, 64, 64)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="4"]
+position = Vector2(-64, -64)
 polygon = PackedVector2Array(0, 0, 128, 0, 128, 64, 192, 64, 192, 128, 64, 128, 64, 64, 0, 64)
+one_way_collision_margin = 0.0

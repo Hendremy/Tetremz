@@ -2,6 +2,5 @@
 
 [ext_resource type="Script" path="res://scripts/Tetromino.gd" id="1_0pxhq"]
 
-[node name="BaseTetromino" type="AnimatableBody2D"]
-sync_to_physics = false
+[node name="BaseTetromino" type="CharacterBody2D"]
 script = ExtResource("1_0pxhq")

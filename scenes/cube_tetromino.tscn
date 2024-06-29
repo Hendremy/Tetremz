@@ -6,37 +6,36 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2x0ml"]
 size = Vector2(128, 128)
 
-[node name="CubeTetromino" type="AnimatableBody2D"]
-sync_to_physics = false
+[node name="CubeTetromino" type="CharacterBody2D"]
 script = ExtResource("1_ul6hn")
 
 [node name="Unit1" type="Sprite2D" parent="."]
-position = Vector2(32, 32)
+position = Vector2(-32, -32)
 texture = ExtResource("1_u1vju")
 region_enabled = true
 region_rect = Rect2(64, 0, 64, 64)
 
 [node name="Unit2" type="Sprite2D" parent="."]
-position = Vector2(32, 32)
+position = Vector2(-32, -32)
 texture = ExtResource("1_u1vju")
 offset = Vector2(64, 0)
 region_enabled = true
 region_rect = Rect2(64, 0, 64, 64)
 
 [node name="Unit3" type="Sprite2D" parent="."]
-position = Vector2(32, 32)
+position = Vector2(-32, -32)
 texture = ExtResource("1_u1vju")
 offset = Vector2(0, 64)
 region_enabled = true
 region_rect = Rect2(64, 0, 64, 64)
 
 [node name="Unit4" type="Sprite2D" parent="."]
-position = Vector2(32, 32)
+position = Vector2(-32, -32)
 texture = ExtResource("1_u1vju")
 offset = Vector2(64, 64)
 region_enabled = true
 region_rect = Rect2(64, 0, 64, 64)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(64, 64)
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2x0ml")
+one_way_collision_margin = 0.0
