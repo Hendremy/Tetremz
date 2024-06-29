@@ -3,29 +3,33 @@ extends CharacterBody2D
 const STEP = 64
 
 signal bottom_hit
+signal hold_pressed
+
 var can_move = false
 
 func _ready():
 	can_move = false
 	
-func activate():
-	can_move = true
+func activate(on):
+	can_move = on
 
 func _process(_delta):
 	if can_move:
-		print(self.position)
 		if Input.is_action_just_pressed("drop"):
 			fall(20)
+			
 		if Input.is_action_just_pressed("rotate_clockwise"):
 			rotation += PI/2
 			if move_and_collide(Vector2(0,0)):
-				#rotate(-PI/2)
 				rotation -= PI/2
 				
 		if Input.is_action_just_pressed("rotate_counter_clockwise"):
 			rotate(-PI/2)
 			if move_and_collide(Vector2(0,0)):
 				rotate(PI/2)
+				
+		if Input.is_action_just_pressed("hold"):
+			emit_signal('hold_pressed')
 				
 		if fmod(self.position.x, STEP) != 0:
 			self.position.x = round_to_multiple_of_STEP(self.position.x)

@@ -144,9 +144,9 @@ theme_override_styles/panel = ExtResource("4_i7i7t")
 [node name="Level" type="Node" parent="UI"]
 
 [node name="LevelLabel" type="Label" parent="UI/Level"]
-offset_left = 896.0
+offset_left = 892.0
 offset_top = 768.0
-offset_right = 1600.0
+offset_right = 1596.0
 offset_bottom = 837.0
 text = "Level : "
 label_settings = SubResource("LabelSettings_xjrjb")
@@ -154,9 +154,9 @@ label_settings = SubResource("LabelSettings_xjrjb")
 [node name="LevelText" type="Label" parent="UI/Level"]
 unique_name_in_owner = true
 z_index = 10
-offset_left = 896.0
+offset_left = 892.0
 offset_top = 896.0
-offset_right = 1472.0
+offset_right = 1468.0
 offset_bottom = 988.0
 text = "1
 "
@@ -165,25 +165,15 @@ label_settings = SubResource("LabelSettings_vlt5f")
 [node name="LevelContainer" type="PanelContainer" parent="UI/Level"]
 anchors_preset = -1
 anchor_bottom = 0.247
-offset_left = 836.0
+offset_left = 832.0
 offset_top = 860.0
-offset_right = 908.0
+offset_right = 904.0
 offset_bottom = 730.945
 scale = Vector2(12.3603, 4.39686)
 theme = SubResource("Theme_dq2qw")
 theme_override_styles/panel = ExtResource("4_i7i7t")
 
 [node name="Hold" type="Node" parent="UI"]
-
-[node name="HoldControl" type="Control" parent="UI/Hold"]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 0
-offset_left = -680.0
-offset_top = 208.0
-offset_right = -646.0
-offset_bottom = 257.0
-scale = Vector2(1.15353, 0.984563)
 
 [node name="HoldContainer" type="PanelContainer" parent="UI/Hold"]
 unique_name_in_owner = true
@@ -209,6 +199,19 @@ offset_right = -120.0
 offset_bottom = 69.0
 text = "Hold :"
 label_settings = SubResource("LabelSettings_xjrjb")
+
+[node name="HoldControl" type="Control" parent="UI/Hold"]
+unique_name_in_owner = true
+z_index = 50
+layout_mode = 3
+anchor_left = -0.611
+anchor_top = 0.309
+anchor_right = -0.578
+anchor_bottom = 0.346
+offset_left = -2.12799
+offset_top = -8.23201
+offset_right = -0.143982
+offset_bottom = 7.79199
 
 [node name="Next" type="Node" parent="UI"]
 
@@ -278,13 +281,44 @@ offset_top = 192.0
 offset_right = 1552.0
 offset_bottom = 232.0
 
+[node name="Lines" type="Node" parent="UI"]
+
+[node name="LinesLabel" type="Label" parent="UI/Lines"]
+offset_left = 892.0
+offset_top = 1064.0
+offset_right = 1596.0
+offset_bottom = 1133.0
+text = "Lines : "
+label_settings = SubResource("LabelSettings_xjrjb")
+
+[node name="LinesText" type="Label" parent="UI/Lines"]
+unique_name_in_owner = true
+z_index = 10
+offset_left = 892.0
+offset_top = 1192.0
+offset_right = 1468.0
+offset_bottom = 1284.0
+text = "0
+"
+label_settings = SubResource("LabelSettings_vlt5f")
+
+[node name="LinesContainer" type="PanelContainer" parent="UI/Lines"]
+anchors_preset = -1
+anchor_bottom = 0.247
+offset_left = 832.0
+offset_top = 1156.0
+offset_right = 904.0
+offset_bottom = 1026.94
+scale = Vector2(12.3603, 4.39686)
+theme = SubResource("Theme_dq2qw")
+theme_override_styles/panel = ExtResource("4_i7i7t")
+
 [node name="TileMap" type="TileMap" parent="."]
-visible = false
 z_index = 50
 tile_set = SubResource("TileSet_7fah7")
 format = 2
 layer_0/name = "Box"
-layer_0/tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 1, 131072, 65536, 1, 196608, 65536, 1, 262144, 65536, 1, 327680, 65536, 1, 393216, 65536, 1, 458752, 65536, 1, 524288, 65536, 1, 589824, 65536, 1, 655360, 65536, 1, 720896, 65536, 1, 786432, 65536, 1, 851968, 65536, 1, 917504, 65536, 1, 983040, 65536, 1, 1048576, 65536, 1, 1114112, 65536, 1, 1179648, 65536, 1, 1245184, 65536, 1, 1310721, 65536, 1, 1310722, 65536, 1, 1310723, 65536, 1, 1310724, 65536, 1, 1310725, 65536, 1, 1310726, 65536, 1, 1310727, 65536, 1, 1310728, 65536, 1, 1310729, 65536, 1, 1310730, 65536, 1, 11, 65536, 1, 65547, 65536, 1, 131083, 65536, 1, 196619, 65536, 1, 262155, 65536, 1, 393227, 65536, 1, 458763, 65536, 1, 524299, 65536, 1, 589835, 65536, 1, 655371, 65536, 1, 720907, 65536, 1, 786443, 65536, 1, 851979, 65536, 1, 917515, 65536, 1, 983051, 65536, 1, 1048587, 65536, 1, 1114123, 65536, 1, 1179659, 65536, 1, 1245195, 65536, 1, 327691, 65536, 1, 1310731, 65536, 1, 1310720, 65536, 1, -65536, 65536, 1, -131072, 65536, 1, -65525, 65536, 1, -131061, 65536, 1, -196608, 65536, 1, -196597, 65536, 1)
+layer_0/tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 1, 131072, 65536, 1, 196608, 65536, 1, 262144, 65536, 1, 327680, 65536, 1, 393216, 65536, 1, 458752, 65536, 1, 524288, 65536, 1, 589824, 65536, 1, 655360, 65536, 1, 720896, 65536, 1, 786432, 65536, 1, 851968, 65536, 1, 917504, 65536, 1, 983040, 65536, 1, 1048576, 65536, 1, 1114112, 65536, 1, 1179648, 65536, 1, 1245184, 65536, 1, 1310721, 65536, 1, 1310722, 65536, 1, 1310723, 65536, 1, 1310724, 65536, 1, 1310725, 65536, 1, 1310726, 65536, 1, 1310727, 65536, 1, 1310728, 65536, 1, 1310729, 65536, 1, 1310730, 65536, 1, 11, 65536, 1, 65547, 65536, 1, 131083, 65536, 1, 196619, 65536, 1, 262155, 65536, 1, 393227, 65536, 1, 458763, 65536, 1, 524299, 65536, 1, 589835, 65536, 1, 655371, 65536, 1, 720907, 65536, 1, 786443, 65536, 1, 851979, 65536, 1, 917515, 65536, 1, 983051, 65536, 1, 1048587, 65536, 1, 1114123, 65536, 1, 1179659, 65536, 1, 1245195, 65536, 1, 327691, 65536, 1, 1310731, 65536, 1, 1310720, 65536, 1, -65536, 65536, 1, -131072, 65536, 1, -65525, 65536, 1, -131061, 65536, 1, -196608, 65536, 1, -196597, 65536, 1, 458739, 65536, 1, 458740, 65536, 1, 458741, 65536, 1, 458742, 65536, 1, 458743, 65536, 1)
 layer_1/name = "Background"
 layer_1/tile_data = PackedInt32Array()
 
