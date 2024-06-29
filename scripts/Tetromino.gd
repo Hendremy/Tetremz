@@ -14,9 +14,10 @@ func _process(_delta):
 		if Input.is_action_just_pressed("drop"):
 			fall(20)
 		if Input.is_action_just_pressed("rotate_clockwise"):
-			rotate(PI/2)
+			rotation += PI/2
 			if move_and_collide(Vector2(0,0)):
-				rotate(-PI/2)
+				#rotate(-PI/2)
+				rotation -= PI/2
 				
 		if Input.is_action_just_pressed("rotate_counter_clockwise"):
 			rotate(-PI/2)

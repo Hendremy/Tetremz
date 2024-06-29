@@ -1,9 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://betlcoc43enho"]
+[gd_scene load_steps=13 format=3 uid="uid://betlcoc43enho"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_478aj"]
 [ext_resource type="Texture2D" uid="uid://d256rcjvfgi4r" path="res://assets/bloc_sheet.png" id="1_q2lsy"]
 [ext_resource type="Script" path="res://scripts/GameController.gd" id="2_nc6p1"]
+[ext_resource type="Texture2D" uid="uid://d1uatpy0v4gul" path="res://assets/beautiful-mountains-landscape.jpg" id="2_tny40"]
 [ext_resource type="Script" path="res://scripts/TetrominoFactory.gd" id="4_8jv1n"]
+[ext_resource type="StyleBox" uid="uid://kxk8nc41mtsg" path="res://assets/boxes.tres" id="4_i7i7t"]
+[ext_resource type="FontFile" uid="uid://lyxkbj4otydv" path="res://assets/space age.otf" id="6_yxdf0"]
+
+[sub_resource type="Theme" id="Theme_dq2qw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xjrjb"]
+font = ExtResource("6_yxdf0")
+font_size = 72
+outline_color = Color(0.348791, 0.348791, 0.348791, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vlt5f"]
+font = ExtResource("6_yxdf0")
+font_size = 72
+shadow_size = 5
+shadow_color = Color(0.0742504, 0.0742504, 0.215427, 1)
+shadow_offset = Vector2(5, 5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cyyse"]
 texture = ExtResource("1_q2lsy")
@@ -44,6 +64,10 @@ texture_region_size = Vector2i(64, 64)
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSet" id="TileSet_7fah7"]
 tile_size = Vector2i(64, 64)
@@ -53,11 +77,152 @@ sources/0 = SubResource("TileSetAtlasSource_cyyse")
 [node name="Main" type="Node2D"]
 script = ExtResource("1_478aj")
 
+[node name="UI" type="Node" parent="."]
+
+[node name="GridContainer" type="PanelContainer" parent="UI"]
+unique_name_in_owner = true
+z_index = -1
+anchors_preset = -1
+anchor_bottom = 0.247
+offset_left = 48.0
+offset_top = -16.0
+offset_right = 102.0
+offset_bottom = 120.944
+scale = Vector2(12.3603, 4.39686)
+theme = SubResource("Theme_dq2qw")
+theme_override_styles/panel = ExtResource("4_i7i7t")
+
+[node name="TextureRect" type="TextureRect" parent="UI"]
+z_index = -100
+offset_left = -1432.0
+offset_top = -216.0
+offset_right = 1936.0
+offset_bottom = 1672.0
+texture = ExtResource("2_tny40")
+expand_mode = 1
+flip_h = true
+
+[node name="ColorRect2" type="ColorRect" parent="UI"]
+z_index = -50
+offset_left = -1304.0
+offset_top = -272.0
+offset_right = 2112.0
+offset_bottom = 1592.0
+color = Color(0, 0, 0, 0.490196)
+
+[node name="Score" type="Node" parent="UI"]
+
+[node name="ScoreLabel" type="Label" parent="UI/Score"]
+offset_left = 896.0
+offset_top = 448.0
+offset_right = 1600.0
+offset_bottom = 517.0
+text = "Score : "
+label_settings = SubResource("LabelSettings_xjrjb")
+
+[node name="ScoreText" type="Label" parent="UI/Score"]
+unique_name_in_owner = true
+z_index = 10
+offset_left = 896.0
+offset_top = 576.0
+offset_right = 1472.0
+offset_bottom = 668.0
+text = "0"
+label_settings = SubResource("LabelSettings_vlt5f")
+
+[node name="ScoreContainer" type="PanelContainer" parent="UI/Score"]
+anchors_preset = -1
+anchor_bottom = 0.247
+offset_left = 836.0
+offset_top = 541.0
+offset_right = 908.0
+offset_bottom = 411.944
+scale = Vector2(12.3603, 4.39686)
+theme = SubResource("Theme_dq2qw")
+theme_override_styles/panel = ExtResource("4_i7i7t")
+
+[node name="Level" type="Node" parent="UI"]
+
+[node name="LevelLabel" type="Label" parent="UI/Level"]
+offset_left = 896.0
+offset_top = 768.0
+offset_right = 1600.0
+offset_bottom = 837.0
+text = "Level : "
+label_settings = SubResource("LabelSettings_xjrjb")
+
+[node name="LevelText" type="Label" parent="UI/Level"]
+unique_name_in_owner = true
+z_index = 10
+offset_left = 896.0
+offset_top = 896.0
+offset_right = 1472.0
+offset_bottom = 988.0
+text = "1
+"
+label_settings = SubResource("LabelSettings_vlt5f")
+
+[node name="LevelContainer" type="PanelContainer" parent="UI/Level"]
+anchors_preset = -1
+anchor_bottom = 0.247
+offset_left = 836.0
+offset_top = 860.0
+offset_right = 908.0
+offset_bottom = 730.945
+scale = Vector2(12.3603, 4.39686)
+theme = SubResource("Theme_dq2qw")
+theme_override_styles/panel = ExtResource("4_i7i7t")
+
+[node name="Hold" type="Node" parent="UI"]
+
+[node name="HoldContainer" type="PanelContainer" parent="UI/Hold"]
+unique_name_in_owner = true
+z_index = -1
+anchors_preset = -1
+anchor_bottom = 0.247
+offset_left = -832.0
+offset_top = 96.0
+offset_right = -796.0
+offset_bottom = -13.056
+scale = Vector2(8.7603, 4.39686)
+theme = SubResource("Theme_dq2qw")
+theme_override_styles/panel = ExtResource("4_i7i7t")
+
+[node name="HoldLabel" type="Label" parent="UI/Hold"]
+offset_left = -824.0
+offset_right = -120.0
+offset_bottom = 69.0
+text = "Hold :"
+label_settings = SubResource("LabelSettings_xjrjb")
+
+[node name="Next" type="Node" parent="UI"]
+
+[node name="NextLabel" type="Label" parent="UI/Next"]
+offset_left = 832.0
+offset_right = 1536.0
+offset_bottom = 69.0
+text = "Next :"
+label_settings = SubResource("LabelSettings_xjrjb")
+
+[node name="NextContainer" type="PanelContainer" parent="UI/Next"]
+z_index = -1
+anchors_preset = -1
+anchor_bottom = 0.247
+offset_left = 836.0
+offset_top = 96.0
+offset_right = 908.0
+offset_bottom = -6.056
+scale = Vector2(12.3603, 4.39686)
+theme = SubResource("Theme_dq2qw")
+theme_override_styles/panel = ExtResource("4_i7i7t")
+
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
+z_index = 50
 tile_set = SubResource("TileSet_7fah7")
 format = 2
 layer_0/name = "Box"
-layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 720896, 0, 0, 786432, 0, 0, 851968, 0, 0, 917504, 0, 0, 983040, 0, 0, 1048576, 0, 0, 1114112, 0, 0, 1179648, 0, 0, 1245184, 0, 0, 1310721, 0, 0, 1310722, 0, 0, 1310723, 0, 0, 1310724, 0, 0, 1310725, 0, 0, 1310726, 0, 0, 1310727, 0, 0, 1310728, 0, 0, 1310729, 0, 0, 1310730, 0, 0, 11, 0, 0, 65547, 0, 0, 131083, 0, 0, 196619, 0, 0, 262155, 0, 0, 393227, 0, 0, 458763, 0, 0, 524299, 0, 0, 589835, 0, 0, 655371, 0, 0, 720907, 0, 0, 786443, 0, 0, 851979, 0, 0, 917515, 0, 0, 983051, 0, 0, 1048587, 0, 0, 1114123, 0, 0, 1179659, 0, 0, 1245195, 0, 0, 327691, 0, 0, 1310731, 0, 0, 1310720, 0, 0, -65536, 0, 0, -131072, 0, 0, -65525, 0, 0, -131061, 0, 0)
+layer_0/tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 1, 131072, 65536, 1, 196608, 65536, 1, 262144, 65536, 1, 327680, 65536, 1, 393216, 65536, 1, 458752, 65536, 1, 524288, 65536, 1, 589824, 65536, 1, 655360, 65536, 1, 720896, 65536, 1, 786432, 65536, 1, 851968, 65536, 1, 917504, 65536, 1, 983040, 65536, 1, 1048576, 65536, 1, 1114112, 65536, 1, 1179648, 65536, 1, 1245184, 65536, 1, 1310721, 65536, 1, 1310722, 65536, 1, 1310723, 65536, 1, 1310724, 65536, 1, 1310725, 65536, 1, 1310726, 65536, 1, 1310727, 65536, 1, 1310728, 65536, 1, 1310729, 65536, 1, 1310730, 65536, 1, 11, 65536, 1, 65547, 65536, 1, 131083, 65536, 1, 196619, 65536, 1, 262155, 65536, 1, 393227, 65536, 1, 458763, 65536, 1, 524299, 65536, 1, 589835, 65536, 1, 655371, 65536, 1, 720907, 65536, 1, 786443, 65536, 1, 851979, 65536, 1, 917515, 65536, 1, 983051, 65536, 1, 1048587, 65536, 1, 1114123, 65536, 1, 1179659, 65536, 1, 1245195, 65536, 1, 327691, 65536, 1, 1310731, 65536, 1, 1310720, 65536, 1, -65536, 65536, 1, -131072, 65536, 1, -65525, 65536, 1, -131061, 65536, 1, -196608, 65536, 1, -196597, 65536, 1)
 layer_1/name = "Background"
 layer_1/tile_data = PackedInt32Array()
 
