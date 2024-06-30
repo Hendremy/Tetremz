@@ -314,6 +314,7 @@ theme = SubResource("Theme_dq2qw")
 theme_override_styles/panel = ExtResource("4_i7i7t")
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 z_index = 50
 tile_set = SubResource("TileSet_7fah7")
 format = 2

@@ -58,7 +58,6 @@ func pop_next():
 	return out_child
 
 func move_next_child(index):
-	print(next[index].get_children())
 	var child = next[index].get_children()[0]
 	next[index].remove_child(child)
 	

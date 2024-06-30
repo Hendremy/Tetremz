@@ -34,5 +34,5 @@ region_rect = Rect2(448, 0, 64, 64)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="4"]
 position = Vector2(-64, -64)
-polygon = PackedVector2Array(0, 0, 128, 0, 128, 64, 192, 64, 192, 128, 64, 128, 64, 64, 0, 64)
+polygon = PackedVector2Array(8, 8, 120, 8, 120, 72, 184, 72, 184, 120, 72, 120, 72, 56, 8, 56)
 one_way_collision_margin = 0.0
