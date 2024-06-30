@@ -4,9 +4,10 @@
 [ext_resource type="Script" path="res://scripts/Tetromino.gd" id="1_ul6hn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2x0ml"]
-size = Vector2(128, 128)
+size = Vector2(112, 112)
 
 [node name="CubeTetromino" type="CharacterBody2D"]
+position = Vector2(64, 64)
 script = ExtResource("1_ul6hn")
 
 [node name="Unit1" type="Sprite2D" parent="."]

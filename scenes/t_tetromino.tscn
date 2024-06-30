@@ -4,35 +4,36 @@
 [ext_resource type="Texture2D" uid="uid://d256rcjvfgi4r" path="res://assets/bloc_sheet.png" id="2_581ys"]
 
 [node name="TTetromino" instance=ExtResource("1_iovec")]
+position = Vector2(64, 0)
 
-[node name="Collision" type="CollisionPolygon2D" parent="." index="0"]
-position = Vector2(32, 32)
-polygon = PackedVector2Array(-96, -32, 96, -32, 96, 32, 32, 32, 32, 96, -32, 96, -32, 32, -96, 32)
-one_way_collision_margin = 0.0
-
-[node name="Unit2" type="Sprite2D" parent="." index="1"]
+[node name="Unit2" type="Sprite2D" parent="." index="0"]
 position = Vector2(32, 32)
 texture = ExtResource("2_581ys")
 offset = Vector2(64, 0)
 region_enabled = true
 region_rect = Rect2(0, 64, 64, 64)
 
-[node name="Unit3" type="Sprite2D" parent="." index="2"]
+[node name="Unit3" type="Sprite2D" parent="." index="1"]
 position = Vector2(32, 32)
 texture = ExtResource("2_581ys")
 offset = Vector2(-64, 0)
 region_enabled = true
 region_rect = Rect2(0, 64, 64, 64)
 
-[node name="Unit4" type="Sprite2D" parent="." index="3"]
+[node name="Unit4" type="Sprite2D" parent="." index="2"]
 position = Vector2(32, 32)
 texture = ExtResource("2_581ys")
 offset = Vector2(0, 64)
 region_enabled = true
 region_rect = Rect2(0, 64, 64, 64)
 
-[node name="Unit" type="Sprite2D" parent="." index="4"]
+[node name="Unit" type="Sprite2D" parent="." index="3"]
 position = Vector2(32, 32)
 texture = ExtResource("2_581ys")
 region_enabled = true
 region_rect = Rect2(0, 64, 64, 64)
+
+[node name="Collision" type="CollisionPolygon2D" parent="." index="4"]
+position = Vector2(32, 32)
+polygon = PackedVector2Array(-88, -24, 88, -24, 88, 24, 24, 24, 24, 88, -24, 88, -24, 24, -88, 24)
+one_way_collision_margin = 0.0

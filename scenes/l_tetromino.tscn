@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d256rcjvfgi4r" path="res://assets/bloc_sheet.png" id="2_n8dry"]
 
 [node name="LTetromino" instance=ExtResource("1_jso11")]
+position = Vector2(64, 64)
 
 [node name="Unit" type="Sprite2D" parent="." index="0"]
 position = Vector2(-32, -32)
@@ -34,5 +35,5 @@ region_rect = Rect2(192, 0, 64, 64)
 
 [node name="CollisionShape" type="CollisionPolygon2D" parent="." index="4"]
 position = Vector2(-64, -64)
-polygon = PackedVector2Array(0, 0, 192, 0, 192, 64, 64, 64, 64, 128, 0, 128)
+polygon = PackedVector2Array(8, 8, 184, 8, 184, 56, 56, 56, 56, 120, 8, 120)
 one_way_collision_margin = 0.0

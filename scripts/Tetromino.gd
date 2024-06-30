@@ -31,18 +31,22 @@ func _process(_delta):
 		if Input.is_action_just_pressed("hold"):
 			emit_signal('hold_pressed')
 				
-		if fmod(self.position.x, STEP) != 0:
-			self.position.x = round_to_multiple_of_STEP(self.position.x)
-		if fmod(self.position.y, STEP) != 0:
-			self.position.y = round_to_multiple_of_STEP(self.position.y)
+		adjust_position()
+
+func adjust_position():
+	if fmod(self.position.x, STEP) != 0:
+		self.position.x = round_to_multiple_of_STEP(self.position.x)
+	if fmod(self.position.y, STEP) != 0:
+		self.position.y = round_to_multiple_of_STEP(self.position.y)
 
 func round_to_multiple_of_STEP(number: float) -> int:
-	return int(int(number + 32)/ STEP) * STEP
+	return int(float(number + 32)/ STEP) * STEP
 
 func fall(nb_steps):
 	var result = move_and_collide(Vector2(0,nb_steps * STEP))
 	if result:
-		can_move = false
+		activate(false)
+		adjust_position()	
 		emit_signal("bottom_hit")
 
 func on_fall_timer_timeout():
